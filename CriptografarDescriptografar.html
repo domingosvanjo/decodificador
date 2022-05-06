@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CriptografarDescriptografar.css" rel="stylesheet" type="text/css" />
+    <title id="titulo">Criptografar ou descriptografar textos</title>
+</head>
+<body>
+    <form name="encrDecr">
+        <div id="principal">
+            <div id='titulo' class="centralizar"><h2>Criptografar ou descriptografar textos</h2></div>
+            <div id="divTextoDescrip"  class="centralizar">
+                <textarea id="textoDescrip" name="textoDescrip" rows="18" cols="70" placeholder="Digite seu texto aqui" onkeyup="ocultar(textoDescrip.value);" ></textarea>
+            </div>
+            <div id="frameInicial" name="frameInicial" >
+                <figure>
+                    <img id="imgProcurando" name="imgProcurando" src="imagens\procurando2.jpg" alt="Menino procurando" width="150px">
+                </figure>
+                <textarea id="nenhumaMsg" name="nenhumaMsg" placeholder="Nenhuma mensagem encontrada" rows="3" disabled></textarea>
+                <textarea id="digiteUmTexto" name="digiteUmTexto" placeholder="Digite um texto que você deseja criptografar ou descriptografar" disabled></textarea>
+            </div>
+
+            <div id="divTextoEncrip" class="centralizar" >
+                <textarea id="textoEncrip" name="textoEncrip" rows="23" cols="40"></textarea>
+            </div>
+            
+            <label id="info">Apenas letras minúsculas e sem acento.</label>
+            <input type="button" id="encripButt" onclick="criptografar();" value="Criptografar">
+            <input type="button" id="descripButt" onclick="descriptografar();" value="Descriptografar">
+            <input type="button" id="copiarButt" name="copiarButt" onclick="copiar();" value="Copiar">
+            
+            <div id="rodape">
+                <footer>
+                    Desenvolvimento front-end e back-end:<br>
+                    Domingos Vanjo
+                </footer>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+    function criptografar(){
+        var textoDescrip = document.encrDecr.textoDescrip.value;
+        var textoEncrip = "";
+        
+        if(textoDescrip.length > 1){
+            for(var i = 0; i < textoDescrip.length; i++){
+                switch(textoDescrip.charAt(i)){
+                    case 'a':
+                        textoEncrip +="ai";
+                        break;
+                    case 'e':
+                        textoEncrip += "enter";
+                        break;
+                    case 'i':
+                        textoEncrip += "imes";
+                        break;
+                    case 'o':
+                        textoEncrip += "ober";
+                        break;
+                    case 'u':
+                        textoEncrip += "ufat";
+                        break;
+                    default:
+                        textoEncrip += textoDescrip.charAt(i);
+                }
+            }
+            document.encrDecr.textoEncrip.value = textoEncrip;    
+              
+        }
+        
+    }
+
+    function descriptografar(){
+        var textoDescrip = document.encrDecr.textoDescrip.value;
+        var textoEncrip1 = "";
+        var textoEncrip2 = "";
+        var textoEncrip3 = "";
+        var textoEncrip4 = "";
+        var textoEncrip5 = "";
+        var a = /ai/gi;
+        var e = /enter/gi;
+        var i = /imes/gi;
+        var o = /ober/gi;
+        var u = /ufat/gi;
+        if(textoDescrip.length > 1){
+            textoEncrip1 = textoDescrip.replace(a, 'a');
+            textoEncrip2 = textoEncrip1.replace(e, 'e');    
+            textoEncrip3 = textoEncrip2.replace(i, 'i'); 
+            textoEncrip4 = textoEncrip3.replace(o, 'o');
+            textoEncrip5 = textoEncrip4.replace(u, 'u');
+            
+            document.encrDecr.textoEncrip.value = textoEncrip5;
+        }
+    }
+
+    function ocultar(textoDescrip){
+        
+        if(textoDescrip.length > 0){
+            document.encrDecr.imgProcurando.hidden = true;  
+            document.encrDecr.nenhumaMsg.hidden = true;
+            document.encrDecr.digiteUmTexto.hidden = true;                    
+        }else{
+            document.encrDecr.textoEncrip.value = "";
+            document.encrDecr.imgProcurando.hidden = false;  
+            document.encrDecr.nenhumaMsg.hidden = false;
+            document.encrDecr.digiteUmTexto.hidden = false;
+            
+        }
+
+    }
+
+    function copiar(){
+        var texto = document.getElementById('textoEncrip');
+            texto.select();
+            document.execCommand('cut');
+            
+    }
+
+</script>

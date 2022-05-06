@@ -1,0 +1,138 @@
+
+body{
+    margin: 0px;
+    background-color: burlywood;
+    height:100%;
+}
+
+#principal{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 800px;
+    color: darkblue;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(192, 182, 248);
+    min-height:100%;
+    height:auto;
+    border-radius: 20px;    
+}
+
+#divTextoDescrip{
+    padding-left: 20px;
+}
+
+#textoDescrip {
+    width: 400px;
+    float: left;
+    padding: 9px;
+    font-size: 15pt;
+    text-transform: lowercase;
+    border-radius: 20px;
+    border-style: none;
+    background-color: transparent;
+}
+
+#textoEncrip{
+    width: 330px;
+    border-radius: 20px;
+    font-size: 15pt;
+    text-transform: lowercase;
+    border-style: none;
+}
+
+#divTextoEncrip{
+    padding-right: 15px;
+    float: right;
+}
+
+.centralizar{
+    text-align-last: center;    
+    
+}
+#encripButt{
+    background: darkblue;
+    color: white;
+    order: 0;
+    align-items: center;
+    float: left;
+    margin-left: 50px;
+    padding-left: 45px;
+}
+#descripButt{
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    box-sizing: border-box;
+    color: darkblue;
+    order: 1;
+    align-items: center;
+    float: right;
+    margin-right: 30px;
+    padding-left: 45px;
+}
+
+#copiarButt{
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    box-sizing: border-box;
+    color: darkblue;
+    order: 2;
+    align-items: center;
+    margin-right: 80px;   /*alinhamento do botão*/
+    padding-left: 68px;  /*alinhamento do texto*/
+    margin-left: 540px;
+    position: absolute;
+}
+
+input{
+    display: flex;
+    flex-direction: row;
+    border-radius: 24px;
+    margin-top: 20px;   
+    position: static;
+    width: 180px;
+    height: 47px;
+}
+
+#rodape{
+    clear: both;
+    font-size: small;
+    padding-top: 10px;
+}
+
+#frameInicial{
+    float: right;
+    position: absolute;
+    padding-left: 490px;
+}
+
+#imgProcurando{
+    position: absolute;
+}
+
+#nenhumaMsg{
+    padding-top: 200px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    width: 200px;
+    position: absolute;
+}
+
+#digiteUmTexto{
+    position: absolute;
+    padding-top: 280px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10pt;
+    width: 230px;
+    border: none;
+    background-color: transparent;
+}
+
+#info{
+    
+    font-size: 10pt;
+}
